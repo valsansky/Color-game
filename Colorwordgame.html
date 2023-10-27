@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="da">
+    <head>
+        <title>Color Game</title>
+        <meta charset="UTF-8">
+    </head>
+    <body>
+        <br><button id="nSpil">Nyt spil</button><br><br>
+        <table id="tabel">
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+        </table>
+    </body>
+
+
+    <style>
+       body {
+        background-color: black;
+       }
+       
+       table {
+            width: 1200px; 
+            border-collapse: collapse;
+        }
+
+        td {
+            width: 200px;
+            border: 1px solid white;
+            padding: 0px;
+            text-align: center;
+            font-size: xx-large;
+            font-weight: bold;
+        }
+
+        tr {
+            height: 110px;
+        }
+
+        p {
+            font-size: xx-large;
+            text-align: center;
+            font-weight: bold;
+        }
+
+    </style>
+
+
+    <script>
+
+    document.getElementById("nSpil").addEventListener("click", function () {
+
+            var ord = ["Rød", "Gul", "Grøn", "Blå", "Orange"];
+            var farver = ["red", "yellow", "green", "blue", "orange"];
+
+            var ordtabel = document.getElementById("tabel").getElementsByTagName("td");
+
+            for (var i = 0; i < ordtabel.length; i++) {
+                var tilford = Math.floor(Math.random() * ord.length);
+                var tilffarve = Math.floor(Math.random() * farver.length);
+
+                ordtabel[i].textContent = ord[tilford];
+                ordtabel[i].style.color = farver[tilffarve];
+            }
+        });
+
+    </script>
+
+
+</html>
